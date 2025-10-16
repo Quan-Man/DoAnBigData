@@ -10,11 +10,5 @@ for line in sys.stdin:
     row = next(reader)
     if len(row) < 7:
         continue
-    brand = row[2].strip()
-    try:
-        rating = float(row[4].replace(',', '.'))
-    except ValueError:
-        continue
-    # Xuất brand, rating, count=1
-    print(f"{brand}\t{rating}\t1")
-
+    category = row[6].strip()
+    print(f"{category}\t1")
