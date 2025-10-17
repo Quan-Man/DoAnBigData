@@ -127,8 +127,7 @@ if st.button("Tìm kiếm"):
     query = """
         SELECT * FROM hasaki
         WHERE LOWER(product_name) LIKE LOWER(%s)
-        ORDER BY id DESC
-        LIMIT 20;
+        ORDER BY id DESC;
     """
     df = pd.read_sql_query(query, conn, params=(f"%{search_keyword}%",))
     conn.close()
